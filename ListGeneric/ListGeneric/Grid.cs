@@ -23,6 +23,11 @@ namespace ListGeneric
                     Cells[x, y] = new Cell();
         }
 
+        public void SetClue(Clue clue)
+        {
+            Cells[clue.XPos, clue.YPos].Clue[(int)clue.Direction] = clue;
+        }
+
         public override string ToString()
         {
             string retval = "";

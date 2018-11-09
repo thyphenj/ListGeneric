@@ -8,15 +8,8 @@ namespace ListGeneric
     {
         static void Main(string[] args)
         {
-            Grid grid = new Grid(6, 4);
-
-            // Pretend to populate the Grid
-            grid.Cells[2, 2].SetDigit(1);
-            grid.Cells[0, 3].SetDigit(2);
-            grid.Cells[3, 0].SetDigit(3);
-
-            // Pretend to populate the Clues
-            List<Clue> Clues = new List<Clue>
+            // Populate the Clues
+            List<Clue> clues = new List<Clue>
             {
                 new Clue(1, Clue.EnumDir.dn, "gam", 2, 0, 0),
                 new Clue(2, Clue.EnumDir.ac, "bet", 3, 4, 0),
@@ -24,15 +17,29 @@ namespace ListGeneric
                 new Clue(1, Clue.EnumDir.ac, "alf", 4, 0, 0)
             };
 
-            foreach (Clue clue in Clues.Where(c => c.Direction == Clue.EnumDir.ac).OrderBy(c => c.Number))
-                Console.WriteLine(clue.ToString());
+            // Populate the Grid
+            Grid grid = new Grid(6, 4);
 
+            foreach (Clue clue in clues)
+                grid.SetClue(clue);
+
+            grid.Cells[2, 2].SetDigit(1);
+            grid.Cells[0, 3].SetDigit(2);
+            grid.Cells[3, 0].SetDigit(3);
+
+            //----------------------------- report on contents!
+            // The clues
+            foreach (Clue clue in clues.Where(c => c.Direction == Clue.EnumDir.ac).OrderBy(c => c.Number))
+                Console.WriteLine(clue.ToString());
             Console.WriteLine();
 
-            foreach (Clue clue in Clues.Where(c => c.Direction == Clue.EnumDir.dn).OrderBy(c => c.Number))
+            foreach (Clue clue in clues.Where(c => c.Direction == Clue.EnumDir.dn).OrderBy(c => c.Number))
                 Console.WriteLine(clue.ToString());
+            Console.WriteLine();
 
+            // The grid
             Console.WriteLine(grid.ToString());
+            Console.ReadLine();
         }
     }
 }

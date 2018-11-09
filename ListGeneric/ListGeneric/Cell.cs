@@ -11,12 +11,14 @@ namespace ListGeneric
         public bool[] AllowedDigits{ get; set; }
 
         public bool Complete { get; set; }
+        public Clue[] Clue { get; set; }
 
         public Cell ()
         {
             AllowedDigits = new bool[]{ true,true,true,true,true,true,true,true,true,true };
             Complete = false;
             Digit = 0;
+            Clue = new Clue[2];
         }
 
         public void SetDigit(int digit)

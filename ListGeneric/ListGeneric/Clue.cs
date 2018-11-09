@@ -6,7 +6,7 @@ namespace ListGeneric
 {
     partial class Clue
     {
-        public enum EnumDir { ac, dn };
+        public enum EnumDir { ac=0, dn=1 };
 
         public int Number { get; set; }
         public EnumDir Direction { get; set; }
