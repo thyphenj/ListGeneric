@@ -4,12 +4,12 @@ using System.Text;
 
 namespace ListGeneric
 {
-    enum EnumDirection { ac, dn };
-
     partial class Clue
     {
+        public enum EnumDir { ac, dn };
+
         public int Number { get; set; }
-        public EnumDirection Direction { get; set; }
+        public EnumDir Direction { get; set; }
         public string Text { get; set; }
         public int Len { get; set; }
 
@@ -20,7 +20,7 @@ namespace ListGeneric
         {
         }
 
-        public Clue(int number, EnumDirection direction, string text, int len, int xPos, int yPos)
+        public Clue(int number, EnumDir direction, string text, int len, int xPos, int yPos)
         {
             Number = number;
             Direction = direction;
