@@ -11,11 +11,19 @@ namespace ListGeneric
             // Populate the Clues
             List<Clue> clues = new List<Clue>
             {
-                new Clue(1, Clue.EnumDir.ac, "alf", 4, 0, 0),
-                new Clue(2, Clue.EnumDir.ac, "bet", 3, 4, 0),
+                new Clue(1, Clue.EnumDir.ac, 2, 0, 0, "Sum of all 20 digits in the grid"),
+                new Clue(2, Clue.EnumDir.ac, 3, 2, 0, "Multiple of another grid entry"),
+                new Clue(4, Clue.EnumDir.ac, 3, 0, 1, "One row of the Playfair code-square"),
+                new Clue(7, Clue.EnumDir.ac, 3, 2, 2, "Divisor of 3dn"),
+                new Clue(8, Clue.EnumDir.ac, 3, 0, 3, "One column of the Playfair code-square" ),
+                new Clue(9, Clue.EnumDir.ac, 2, 3, 3, "The Playfair code-number for this puzzle" ),
 
-                new Clue(1, Clue.EnumDir.dn, "gam", 2, 0, 0),
-                new Clue(3, Clue.EnumDir.dn, "del", 3, 3, 1 )
+                new Clue(1, Clue.EnumDir.dn, 3, 0, 0, "A square minus the grid entry at 1ac" ),
+                new Clue(2, Clue.EnumDir.dn, 2, 2, 0, "Sum of the digits of 7ac" ),
+                new Clue(3, Clue.EnumDir.dn, 3, 3, 0, "Reverse of 2ac" ),
+                new Clue(5, Clue.EnumDir.dn, 3, 1, 1, "Anagram of 6dn" ),
+                new Clue(6, Clue.EnumDir.dn, 3, 4, 1, "Square" ),
+                new Clue(7, Clue.EnumDir.dn, 2, 2, 2, "Prime" ),
             };
 
             // Populate the Grid

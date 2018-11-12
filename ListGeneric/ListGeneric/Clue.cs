@@ -20,7 +20,7 @@ namespace ListGeneric
         {
         }
 
-        public Clue(int number, EnumDir direction, string text, int len, int xPos, int yPos)
+        public Clue(int number, EnumDir direction, int len, int xPos, int yPos, string text)
         {
             Number = number;
             Direction = direction;
