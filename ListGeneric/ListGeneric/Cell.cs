@@ -24,8 +24,9 @@ namespace ListGeneric
         public void SetDigit(int digit)
         {
             for (int i = 0; i < 10; i++)
-                if (i != digit)
                     AllowedDigits[i] = false;
+
+            AllowedDigits[digit] = true;
 
             Digit = digit;
 
@@ -34,7 +35,14 @@ namespace ListGeneric
 
         public override string ToString()
         {
-            return Complete ? Digit.ToString().PadLeft(2) : "  ";
+            //            return Complete ? Digit.ToString().PadLeft(2) : "  ";
+            if (Clue[0] == null)
+                if (Clue[1] == null)
+                    return "  ";
+                else
+                    return Clue[1].Number.ToString().PadLeft(2);
+            else
+                return Clue[0].Number.ToString().PadLeft(2);
         }
     }
 }
