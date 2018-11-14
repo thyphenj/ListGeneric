@@ -27,10 +27,7 @@ namespace ListGeneric
             };
 
             // Populate the Grid
-            Grid grid = new Grid(5, 4);
-
-            foreach (Clue clue in clues)
-                grid.SetClue(clue);
+            Grid grid = new Grid(5, 4, clues);
 
             grid.Cells[1, 1].SetDigit(6);
             grid.Cells[2, 1].SetDigit(1);

@@ -11,7 +11,7 @@ namespace ListGeneric
 
         public Cell[,] Cells {get; set;}
 
-        public Grid ( int width, int height)
+        public Grid(int width, int height)
         {
             Height = height;
             Width = width;
@@ -21,6 +21,21 @@ namespace ListGeneric
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                     Cells[x, y] = new Cell();
+        }
+
+        public Grid(int width, int height, List<Clue> clueList)
+        {   
+            Height = height;
+            Width = width;
+
+            Cells = new Cell[Width, Height];
+
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                    Cells[x, y] = new Cell();
+
+            foreach (Clue clue in clueList)
+                SetClue(clue);
         }
 
         public void SetClue(Clue clue)
